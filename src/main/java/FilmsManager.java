@@ -16,22 +16,24 @@ public class FilmsManager {
         for (int i = 0; i < films.length; i++) {
             tmp[i] = films[i];
         }
-
+        tmp[films.length] = film;
+        films = tmp;
 
     }
 
     public String[] findAll() {
+
         return films;
 
     }
 
     public String[] findLast() {
-         int resultLength;
-         if (films.length < limit) {
-             resultLength = films.length;
-         }else{
-             resultLength = limit;
-         }
+        int resultLength;
+        if (films.length < limit) {
+            resultLength = films.length;
+        } else {
+            resultLength = limit;
+        }
         String[] tmp = new String[limit];
         for (int i = 0; i < films.length; i++) {
             tmp[i] = films[films.length - 1 - i];
